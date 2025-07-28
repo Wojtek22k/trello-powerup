@@ -2,17 +2,51 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Popup test</title>
+  <title>Dodaj zlecenie</title>
   <script src="https://p.trellocdn.com/power-up.min.js"></script>
+</head>
+<body>
+  <h3>Dodaj zlecenie</h3>
+  <form id="task-form">
+    <label>Nazwa: <input type="text" id="title" required></label><br><br>
+    <label>Priorytet:
+      <select id="priority">
+        <option>Niski</option>
+        <option>Średni</option>
+        <option>Wysoki</option>
+      </select>
+    </label><br><br>
+    <label>Cena: <input type="number" id="price"></label><br><br>
+    <label>Czas realizacji: <input type="text" id="time"></label><br><br>
+    <button type="submit">Utwórz kartę</button>
+  </form>
+
   <script>
     const t = TrelloPowerUp.iframe();
 
-    window.addEventListener('DOMContentLoaded', () => {
-      document.body.innerHTML = '<h2>🔥 Popup działa z index.html</h2>';
+    document.getElementById('task-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const title = document.getElementById('title').value;
+      const priority = document.getElementById('priority').value;
+      const price = document.getElementById('price').value;
+      const time = document.getElementById('time').value;
+
+      const desc = `Priorytet: ${priority}\nCena: ${price}\nCzas: ${time}`;
+
+      t.board('id')
+        .then(function (board) {
+          return t.closePopup().then(() => {
+            return t.postMessage({
+              command: 'add-card',
+              data: {
+                name: title,
+                desc: desc,
+                boardId: board.id
+              }
+            });
+          });
+        });
     });
   </script>
-</head>
-<body>
-  <h3>⏳ Ładowanie popupu z index.html…</h3>
 </body>
 </html>
