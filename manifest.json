@@ -12,9 +12,9 @@
       "callback": "claimTask"
     }]
   },
-  "url": "https://github.com/Wojtek22k/trello-powerup",
+  "url": "https://wojtek22k.github.io/trello-powerup",
   "icon": {
-    "url": "https://github.com/Wojtek22k/trello-powerup/icon.png",
+    "url": "https://wojtek22k.github.io/trello-powerup/icon.png",
     "width": 64,
     "height": 64
   }
