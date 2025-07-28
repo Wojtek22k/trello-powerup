@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<title>OAuth Redirect</title>
+</head>
+<body>
+<h1>Otrzymany kod OAuth</h1>
+<div id="code"></div>
+
+<script>
+// Pobierz parametry URL
+const params = new URLSearchParams(window.location.search);
+const code = params.get('code');
+const state = params.get('state');
+
+if (code) {
+  document.getElementById('code').textContent = code;
+  // Możesz tutaj wysłać kod do swojego backendu np. przez fetch albo wyświetlić użytkownikowi do ręcznego skopiowania
+} else {
+  document.getElementById('code').textContent = 'Brak kodu w URL';
+}
+</script>
+</body>
+</html>
