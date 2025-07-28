@@ -1,0 +1,21 @@
+{
+  "name": "Moja Apka Zleceń",
+  "description": "Power-Up do wybierania zleceń przez pracowników",
+  "author": "Twoje Imię",
+  "capabilities": {
+    "board-buttons": [{
+      "text": "Nowe zlecenie",
+      "callback": "showNewTaskForm"
+    }],
+    "card-buttons": [{
+      "text": "Weź zlecenie",
+      "callback": "claimTask"
+    }]
+  },
+  "url": "https://github.com/Wojtek22k/trello-powerup",
+  "icon": {
+    "url": "https://github.com/Wojtek22k/trello-powerup/icon.png",
+    "width": 64,
+    "height": 64
+  }
+}
