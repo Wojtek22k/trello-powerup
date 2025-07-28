@@ -2,18 +2,17 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Dodaj zlecenie</title>
+  <title>Test popupu</title>
   <script src="https://p.trellocdn.com/power-up.min.js"></script>
   <script>
     const t = TrelloPowerUp.iframe();
 
     window.addEventListener('DOMContentLoaded', () => {
-      const info = document.getElementById('info');
-      info.innerText = 'Popup działa! (ale to tylko demo)';
+      document.body.innerHTML = '<h2>🔥 Popup działa poprawnie!</h2>';
     });
   </script>
 </head>
 <body>
-  <h3 id="info">Ładowanie…</h3>
+  <h3>⏳ Ładowanie testowego popupu…</h3>
 </body>
 </html>
