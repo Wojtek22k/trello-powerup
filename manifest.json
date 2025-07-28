@@ -1,18 +1,12 @@
 {
-  "name": "Moja Apka Zleceń",
-  "description": "Power-Up do zarządzania zleceniami",
+  "name": "Zlecenia Power-Up",
+  "description": "Dodawanie i wybieranie zleceń",
   "author": "Wojtek",
   "capabilities": {
     "board-buttons": [
       {
         "text": "Nowe zlecenie",
         "callback": "showNewTaskForm"
-      }
-    ],
-    "card-buttons": [
-      {
-        "text": "Weź zlecenie",
-        "callback": "claimTask"
       }
     ]
   },
@@ -23,4 +17,5 @@
     "height": 64
   }
 }
+
 
